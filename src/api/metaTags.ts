@@ -1,5 +1,5 @@
 import apiClient from './client';
-import { SeoMetaTag, ApiResponse } from '../types/seo';
+import type { SeoMetaTag, ApiResponse } from '../types/seo';
 
 /**
  * SEO 메타 태그 API

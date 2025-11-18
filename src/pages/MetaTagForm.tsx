@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import type { AxiosError } from 'axios';
 import { metaTagsApi } from '../api/metaTags';
-import { SeoMetaTag } from '../types/seo';
+import type { SeoMetaTag } from '../types/seo';
 
 export default function MetaTagForm() {
   const { id } = useParams();
@@ -33,7 +34,7 @@ export default function MetaTagForm() {
       alert('메타 태그가 생성되었습니다.');
       navigate('/meta-tags');
     },
-    onError: (error: any) => {
+    onError: (error: AxiosError<{ message?: string }>) => {
       alert(`생성 실패: ${error.response?.data?.message || error.message}`);
     },
   });
@@ -46,7 +47,7 @@ export default function MetaTagForm() {
       alert('메타 태그가 수정되었습니다.');
       navigate('/meta-tags');
     },
-    onError: (error: any) => {
+    onError: (error: AxiosError<{ message?: string }>) => {
       alert(`수정 실패: ${error.response?.data?.message || error.message}`);
     },
   });

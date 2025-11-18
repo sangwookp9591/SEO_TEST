@@ -4,6 +4,10 @@ import MainLayout from './components/layout/MainLayout';
 import Dashboard from './pages/Dashboard';
 import MetaTagsList from './pages/MetaTagsList';
 import MetaTagForm from './pages/MetaTagForm';
+import SchemasList from './pages/SchemasList';
+import SchemaForm from './pages/SchemaForm';
+import SitemapManager from './pages/SitemapManager';
+import RobotsManager from './pages/RobotsManager';
 import './admin-design-system.css';
 
 const queryClient = new QueryClient({
@@ -26,8 +30,11 @@ function App() {
             <Route path="/meta-tags" element={<MetaTagsList />} />
             <Route path="/meta-tags/new" element={<MetaTagForm />} />
             <Route path="/meta-tags/:id/edit" element={<MetaTagForm />} />
-            <Route path="/schemas" element={<div className="card"><div className="card-body">구조화 데이터 페이지 (개발 예정)</div></div>} />
-            <Route path="/sitemap" element={<div className="card"><div className="card-body">Sitemap 페이지 (개발 예정)</div></div>} />
+            <Route path="/schemas" element={<SchemasList />} />
+            <Route path="/schemas/new" element={<SchemaForm />} />
+            <Route path="/schemas/:id/edit" element={<SchemaForm />} />
+            <Route path="/sitemap" element={<SitemapManager />} />
+            <Route path="/robots" element={<RobotsManager />} />
           </Routes>
         </MainLayout>
       </BrowserRouter>

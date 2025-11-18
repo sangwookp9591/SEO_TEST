@@ -43,6 +43,13 @@ export default function Sidebar() {
           <span className="material-icons sidebar-nav-icon">map</span>
           <span>Sitemap</span>
         </Link>
+        <Link
+          to="/robots"
+          className={`sidebar-nav-item ${isActive('/robots') ? 'active' : ''}`}
+        >
+          <span className="material-icons sidebar-nav-icon">smart_toy</span>
+          <span>Robots.txt</span>
+        </Link>
       </nav>
     </aside>
   );
