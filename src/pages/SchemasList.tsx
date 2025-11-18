@@ -80,6 +80,7 @@ export default function SchemasList() {
               <tr>
                 <th>페이지 타입</th>
                 <th>URL 경로</th>
+                <th>언어</th>
                 <th>스키마 타입</th>
                 <th>JSON 미리보기</th>
                 <th>상태</th>
@@ -94,6 +95,17 @@ export default function SchemasList() {
                       <span className="badge badge-primary">{schema.pageType}</span>
                     </td>
                     <td style={{ fontFamily: 'monospace', fontSize: '13px' }}>{schema.urlPath}</td>
+                    <td>
+                      <code style={{
+                        backgroundColor: '#F3F4F6',
+                        padding: '2px 6px',
+                        borderRadius: '4px',
+                        fontSize: '12px',
+                        fontWeight: 500
+                      }}>
+                        {schema.locale || 'ko'}
+                      </code>
+                    </td>
                     <td>
                       <code style={{
                         backgroundColor: '#F3F4F6',
@@ -155,7 +167,7 @@ export default function SchemasList() {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6} style={{ textAlign: 'center', padding: '48px', color: '#6B7280' }}>
+                  <td colSpan={7} style={{ textAlign: 'center', padding: '48px', color: '#6B7280' }}>
                     <span className="material-icons" style={{ fontSize: '48px', display: 'block', marginBottom: '16px', opacity: 0.3 }}>
                       code
                     </span>

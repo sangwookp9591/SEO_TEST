@@ -71,6 +71,7 @@ export default function MetaTagsList() {
               <tr>
                 <th>페이지 타입</th>
                 <th>URL 경로</th>
+                <th>언어</th>
                 <th>제목</th>
                 <th>설명</th>
                 <th>상태</th>
@@ -85,6 +86,17 @@ export default function MetaTagsList() {
                       <span className="badge badge-primary">{tag.pageType}</span>
                     </td>
                     <td style={{ fontFamily: 'monospace', fontSize: '13px' }}>{tag.urlPath}</td>
+                    <td>
+                      <code style={{
+                        backgroundColor: '#F3F4F6',
+                        padding: '2px 6px',
+                        borderRadius: '4px',
+                        fontSize: '12px',
+                        fontWeight: 500
+                      }}>
+                        {tag.locale || 'ko'}
+                      </code>
+                    </td>
                     <td style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                       {tag.title || '-'}
                     </td>
@@ -121,7 +133,7 @@ export default function MetaTagsList() {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6} style={{ textAlign: 'center', padding: '48px', color: '#6B7280' }}>
+                  <td colSpan={7} style={{ textAlign: 'center', padding: '48px', color: '#6B7280' }}>
                     <span className="material-icons" style={{ fontSize: '48px', display: 'block', marginBottom: '16px', opacity: 0.3 }}>
                       inbox
                     </span>

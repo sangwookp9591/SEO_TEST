@@ -7,6 +7,7 @@ export interface SeoMetaTag {
   pageType: string;
   entityId?: number;
   urlPath: string;
+  locale?: string;
   title?: string;
   description?: string;
   keywords?: string;
@@ -34,6 +35,7 @@ export interface SeoSchema {
   pageType: string;
   entityId?: number;
   urlPath: string;
+  locale?: string;
   schemaType: string;
   schemaJson: string;
   isActive?: boolean;

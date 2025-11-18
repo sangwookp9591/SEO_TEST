@@ -162,6 +162,22 @@ export default function SchemaForm() {
                 </div>
 
                 <div className="form-group">
+                  <label className="form-label">언어 (Locale) *</label>
+                  <select {...register('locale', { required: true })} className="form-input" defaultValue="ko">
+                    <option value="ko">한국어 (ko)</option>
+                    <option value="en">English (en)</option>
+                    <option value="ja">日本語 (ja)</option>
+                    <option value="zh-CN">简体中文 (zh-CN)</option>
+                    <option value="zh-TW">繁體中文 (zh-TW)</option>
+                    <option value="zh-HK">繁體中文-香港 (zh-HK)</option>
+                  </select>
+                  <p style={{ fontSize: '12px', color: '#6B7280', margin: '4px 0 0 0' }}>
+                    동일한 URL 경로에 대해 다국어 스키마를 설정할 수 있습니다
+                  </p>
+                  {errors.locale && <span style={{ color: '#EF4444', fontSize: '12px' }}>필수 항목입니다</span>}
+                </div>
+
+                <div className="form-group">
                   <label className="form-label">스키마 타입 *</label>
                   <input
                     type="text"
